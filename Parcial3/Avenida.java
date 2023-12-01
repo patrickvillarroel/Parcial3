@@ -50,6 +50,21 @@ class Interseccion {
         return suma[k];
     }
 
+    public int CompararMayor() {
+        int i, mayor = 0, mayorAv = 0;
+        for (i = 0; i < 3; i++) {
+            if (mayor < sumarFilas(i)) {
+                mayor = sumarFilas(i);
+            }
+        }
+        for (i = 0; i < 3; i++) {
+            if (mayor == sumarFilas(i)) {
+                mayorAv = i + 1;
+            }
+        }
+        return mayorAv;
+    }
+
     public int mostrar_elemento(int f, int c) {
         return arr[f][c];
     }
@@ -80,10 +95,16 @@ public class Avenida {
         }
 
         for (i = 0; i < 3; i++) {
+            System.out.println("Avenida" + (i + 1) + ": " + obj.sumarFilas(i));
+        }
+        System.out.println("Avenida con mas accidentes: " + obj.CompararMayor());
+
+        for (i = 0; i < 3; i++) {
             for (j = 0; j < 10; j++) {
                 System.out.print(obj.mostrar_elemento(i, j) + "\t"); // "\t" agrega un tabulador
             }
             System.out.println(); // Nueva línea después de cada fila
         }
+
     }
 }
