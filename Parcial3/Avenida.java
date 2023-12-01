@@ -78,13 +78,12 @@ public class Avenida {
         } catch (IOException ex) {
             System.out.println("Error de entrada");
         }
+
         for (i = 0; i < 3; i++) {
             for (j = 0; j < 10; j++) {
-                System.out.println("Elemento " + (i + 1) + "x" + (j + 1) + ": " + obj.mostrar_elemento(i, j));
+                System.out.print(obj.mostrar_elemento(i, j) + "\t"); // "\t" agrega un tabulador
             }
-        }
-        for (int k = 1; k <= 3; k++) {
-            System.out.println("\nLa suma de la fila " + k + " es: " + obj.sumarFilas(k - 1));
+            System.out.println(); // Nueva línea después de cada fila
         }
     }
 }
